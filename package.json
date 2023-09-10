@@ -6,9 +6,12 @@
     "test": "test"
   },
   "scripts": {
+    "run": "docker run -it -p 9090:9090 --rm --name tron tronbox/tre", 
     "dev": "lite-server -c ./bs-config.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tronbox compile",
+    "test": "tronbox test",
     "migrate": "bash scripts/migrate-and-setup.sh"
+    
   },
   "originalAuthors": "truffle-box",
   "author": {
@@ -18,7 +21,11 @@
   "license": "MIT",
   "devDependencies": {
     "chalk": "^2.4.1",
-    "lite-server": "^2.5.4"
+    "lite-server": "^2.5.4",  
+    "dotenv": "^16.3.1",
+    "tronweb": "^5.3.0",
+    "@ethersproject/bytes": "^5.7.0",
+    "@openzeppelin/contracts": "^4.9.3"
   },
   "dependencies": {}
 }
